@@ -5,7 +5,7 @@ opt = ARGV.getopts '', 'execute'
 
 `ghq list -p`.split("\n").each do |path|
 
-  if path =~ %r[\bgithub\.com/delphinus\b] && File.directory?(path)
+  if File.directory?(path)
     Dir.chdir path
   else
     next
